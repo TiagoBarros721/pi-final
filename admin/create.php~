@@ -1,0 +1,23 @@
+<?php
+
+include_once "includes/config.inc.php";
+
+$nome = $_POST["name"];
+$email = $_POST["email"];
+$pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+$sql = "SELECT nome FROM login WHERE nome = '$nome'";
+$c = my_query($sql,0);
+
+if(count($c) > 0){
+
+	echo "nome ja em uso";
+}else {
+
+	$sql = "INSERT INTO login(nome, username, pass, ativo) VALUES ('$nome', '$email','$pass', 0)";
+	$c = my_query($sql, 0);
+
+	echo $c;
+	header("location: page-login.html");
+}
+?>

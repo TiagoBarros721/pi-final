@@ -1,0 +1,6 @@
+{
+	"name": "logs",
+	"headers": ["*ID", "dat:Data", "tim:Hora", "str:IP", "str:Sessão", "str:URL"],
+	"identifier": "id",
+    "editable": false
+}

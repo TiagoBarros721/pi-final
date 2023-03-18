@@ -1,0 +1,5 @@
+{
+	"name": "menu",
+	"headers": ["*ID", "str:Nome", "chk:Ativo", "str:Pai"],
+	"identifier": "id"
+}

@@ -1,0 +1,8 @@
+<?php
+
+	include_once "includes/config.inc.php";
+	
+	$sql = "DELETE FROM login WHERE nome = '".$_GET["nome"]."'";
+	my_query($sql);
+	header("location: crud.php");
+?>

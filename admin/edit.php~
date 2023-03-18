@@ -1,0 +1,23 @@
+<form method="POST" action="confirmEdit.php"> 
+
+<input type="text" name="name" id="name" value=<?php echo "\"".$_GET["nome"]."\"" ?>/><br />
+<input type="text" name="email" id="email" value=<?php 
+
+include_once "includes/config.inc.php";
+$res = my_query("SELECT * FROM login WHERE nome = '".$_GET["nome"]."'");
+echo "\"".$res[0]["username"]."\"" 
+
+
+?>><br />
+<input type="checkbox" name="ativo" id="ativo" <?php 
+
+include_once "includes/config.inc.php";
+$res = my_query("SELECT * FROM login WHERE nome = '".$_GET["nome"]."'");
+
+echo (($res[0]["ativo"] == "1") ? " checked" : "");
+
+?>/><br />
+
+<input type="submit" />
+
+</form>

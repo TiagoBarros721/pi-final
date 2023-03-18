@@ -1,0 +1,5 @@
+{
+	"name": "login",
+	"headers": ["str:Nome", "str:Username", "_Password", "chk:Ativo", "*ID"],
+	"identifier": "id"
+}
