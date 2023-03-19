@@ -19,12 +19,21 @@ class TableBuilder{
         if ($this->tableMetaData == null || $this->tableHeaders == null)
         return;
         
-        $tableData = my_query("SELECT * FROM " . $this->tableMetaData->name);
+        $page = isset($_GET["page"]) ? $_GET["page"] * 20 : 0;
+
+        $tableData = my_query("SELECT * FROM " . $this->tableMetaData->name . " LIMIT 20 OFFSET $page");
+        $size = my_query("SELECT COUNT(*) FROM " . $this->tableMetaData->name);
+        $size = $size[0]["COUNT(*)"];
 
         $table = $this->tableMetaData->name;
         $head = implode(".",  array_filter($this->tableHeaders, function($elem) {return strpos($elem, '*') !== -1; })); 
 
         echo "<h1>Tabela " . $this->tableMetaData->name . "</h1>";
+
+        if($page != 0) echo "<a href='crud.php?table=$table&page=".(($page/20)-1)."'><- anterior</a> ";
+        if($size - $page > 20) echo "<a href='crud.php?table=$table&page=".(($page/20)+1)."'>seguinte -></a>";
+
+        echo "<br/>";
         
         echo "<a href='edit.php?table=$table&header=$head&create=1'>Criar novo registo</a><br/>";
         echo "<table><tr>";

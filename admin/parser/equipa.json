@@ -1,0 +1,5 @@
+{
+	"name": "equipa",
+	"headers": ["*ID", "str:Nome", "str:Posição", "img:Foto"],
+	"identifier": "id"
+}
