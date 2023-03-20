@@ -30,13 +30,13 @@ class TableBuilder{
 
         echo "<h1>Tabela " . $this->tableMetaData->name . "</h1>";
 
-        if($page != 0) echo "<a href='crud.php?table=$table&page=".(($page/20)-1)."'><- anterior</a> ";
-        if($size - $page > 20) echo "<a href='crud.php?table=$table&page=".(($page/20)+1)."'>seguinte -></a>";
+        if($page != 0) echo "<a href='?table=$table&page=".(($page/20)-1)."'><- anterior</a> ";
+        if($size - $page > 20) echo "<a href='?table=$table&page=".(($page/20)+1)."'>seguinte -></a>";
 
         echo "<br/>";
         
         echo "<a href='edit.php?table=$table&header=$head&create=1'>Criar novo registo</a><br/>";
-        echo "<table><tr>";
+        echo "<div class=\"table-responsive\"><table class=\"table table-xs mb-0\"><thead><tr>";
 
         if(count($tableData) <= 0 ) {
 
@@ -65,7 +65,7 @@ class TableBuilder{
 
         if(!isset($this->tableMetaData->editable) || $this->tableMetaData->editable) echo "<th>Editar</th><th>Apagar</th>";
 
-        echo "<tr>";
+        echo "<tr></thead><tbody>";
 
         foreach($tableData as $value) {
                                                        
@@ -83,6 +83,6 @@ class TableBuilder{
             if(!isset($this->tableMetaData->editable) || $this->tableMetaData->editable)
             echo "<td><a href='edit.php?table=$table&nome=$nome&header=$head&query=$query'>X</a></td><td><a href='delete.php?table=$table&nome=$nome&ident=".$this->tableMetaData->identifier."'>X</td>";
         }
-        echo "</table>";
+        echo "</tbody></table></div>";
     }
 }

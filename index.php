@@ -126,51 +126,7 @@
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-image u-shading u-section-9" id="carousel_641e">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-center u-container-style u-group u-group-1">
-          <div class="u-container-layout u-valign-middle u-container-layout-1">
-            <h2 class="u-text u-text-1">Staff Directory</h2>
-            <h4 class="u-text u-text-2">Who Gives It's Personality?</h4>
-            <p class="u-text u-text-3">When we say we provide “worry-free transportation with personality,” we mean it—and these are the people who provide it! We work hard every day to be the most personable and responsive logistics provider in the transportation industry.</p>
-          </div>
-        </div>
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-center u-container-style u-expand-resize u-layout-cell u-left-cell u-size-15 u-size-30-md u-layout-cell-1">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <img class="u-image u-image-circle u-image-1" src="images/017d071ec905c8b59b07af2bb8e28311.jpeg">
-                  <h4 class="u-text u-text-4">Brian Wolf</h4>
-                  <p class="u-text u-text-5">Dispatch</p>
-                </div>
-              </div>
-              <div class="u-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-3">
-                  <img class="u-image u-image-circle u-image-2" src="images/02a1c2efb69157b671fe250415edf429.jpeg">
-                  <h4 class="u-text u-text-6">Kate Jhonson</h4>
-                  <p class="u-text u-text-7">Director</p>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-3">
-                <div class="u-container-layout u-valign-middle-lg u-container-layout-4">
-                  <img class="u-image u-image-circle u-image-3" src="images/de509627afec3e8283d150634a74395c.jpeg">
-                  <h4 class="u-align-center u-text u-text-8">Mike scavo</h4>
-                  <p class="u-align-center u-text u-text-9">Director</p>
-                </div>
-              </div>
-              <div class="u-container-style u-layout-cell u-right-cell u-size-15 u-size-30-md u-layout-cell-4">
-                <div class="u-container-layout u-valign-middle-lg u-container-layout-5">
-                  <img class="u-image u-image-circle u-image-4" src="images/bded043ad44af2687e14a2c7fd95c98a.jpeg">
-                  <h4 class="u-align-center u-text u-text-10">linda hudson</h4>
-                  <p class="u-align-center u-text u-text-11">Manager</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <section class="u-clearfix u-section-10" id="carousel_eb1d">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">

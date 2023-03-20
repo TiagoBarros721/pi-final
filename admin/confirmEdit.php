@@ -63,6 +63,7 @@ $sql = "UPDATE $table SET " . implode(",",$conditions) ." " . substr($_GET["iden
 echo $sql;
 my_query($sql);
 
+
 header("location: crud.php");
 
 ?>

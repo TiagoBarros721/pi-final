@@ -48,19 +48,40 @@
     </section>
 
     
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6627"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Texto de Amostra. Clique para selecionar o Elemento de Texto.</p>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
+    <section class="u-clearfix u-image u-shading u-section-9" id="carousel_641e">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-container-style u-group u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <h2 class="u-text u-text-1">Staff</h2>
+            <h4 class="u-text u-text-2">Pessoas que trabalham (e não trabalham :D)</h4>
+          </div>
+        </div>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <?php
+              
+              include_once("admin/includes/config.inc.php");
+
+              $team = my_query("SELECT * FROM equipa");
+              
+              foreach($team as $member){
+              ?>
+              <div class="u-align-center u-container-style u-expand-resize u-layout-cell u-left-cell u-size-15 u-size-30-md u-layout-cell-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                  <img class="u-image u-image-circle u-image-1" src=<?php echo "admin/uploads/".$member["foto"] ?>>
+                  <h4 class="u-text u-text-4"><?php echo $member["nome"] ?></h4>
+                  <p class="u-text u-text-5"><?php echo $member["posicao"] ?></p>
+                </div>
+              </div>
+
+              <?php
+              }
+              ?>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   
 </body></html>
