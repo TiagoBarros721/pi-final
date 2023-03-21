@@ -1,0 +1,7 @@
+
+{
+	"name": "galeria",
+	"headers": ["*ID", "img:Imagem"],
+	"identifier": "id"
+}
+    

@@ -39,6 +39,10 @@ if(isset($_GET["create"])){
             case "img":
                 $type = "file";
                 break;
+            case "dat":
+
+                $type = "date";
+                break;
         }
 
         echo $value["Field"] . ": ";
@@ -90,6 +94,10 @@ foreach($res[0] as $key => $value){
         case "img":
             $type = "file";
             break;
+            case "dat":
+
+                $type = "date";
+                break;
     }
 
     echo $head . ": ";

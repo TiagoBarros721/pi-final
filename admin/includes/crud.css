@@ -40,3 +40,15 @@ body {
 
     zoom: 160%;
 }
+
+.imagem {
+
+    width: 300px;
+    height: 300px;
+}
+
+a {
+
+    color: #009879 !important;
+    text-decoration: underline !important;
+}

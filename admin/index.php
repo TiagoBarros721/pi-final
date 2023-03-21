@@ -29,6 +29,7 @@ if(!isset($_SESSION["login"])){
     <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./includes/crud.css">
 
 </head>
 
@@ -202,9 +203,15 @@ if(!isset($_SESSION["login"])){
                         <div class="card gradient-1">
                             <div class="card-body">
                                 <h3 class="card-title text-white">Fumos vendidos 🎎</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-                                </div>
+                                <div class="d-inline-block"><h2 class="text-white">
+                                  <?php
+
+                                    $size = my_query("SELECT COUNT(*) FROM compra");
+                                    $size = $size[0]["COUNT(*)"];
+
+                                    echo $size;
+                                  ?>
+                                </h2></div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
                             </div>
                         </div>
@@ -214,7 +221,15 @@ if(!isset($_SESSION["login"])){
                             <div class="card-body">
                                 <h3 class="card-title text-white">Lucro💸</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">$ 8541</h2>
+                                <h2 class="text-white"><?php
+
+                                    $sql = "SELECT SUM(produtos.preco) FROM compra INNER JOIN produtos ON compra.fumo = produtos.id;";
+                                    $size = my_query($sql);
+                                    $size = $size[0]["SUM(produtos.preco)"];
+
+                                    echo $size;
+
+                                  ?>€</h2>
                                 </div>
                                 <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
                             </div>
@@ -268,7 +283,7 @@ if(!isset($_SESSION["login"])){
 	foreach ($res as $value) {
 
 		$name = strval($value["Tables_in_12itm25_login"]);
-		echo "<li><a href='?table=$name'>$name</a></li>";
+		echo "<li><a class='under' href='?table=$name'>$name</a></li>";
 	}
 
 	echo "</ul>";

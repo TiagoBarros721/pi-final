@@ -1,17 +1,3 @@
-<?php
-include_once "admin/includes/config.inc.php";
-
-if(isset($_GET["compra"])){
-
-  $logDate = date('Y-m-d');
-  $fumo = $_GET["compra"];
-
-  $sql = "INSERT INTO compra(fumo, data) VALUES($fumo, '$logDate')";
-  my_query($sql);
-}
-
-?>
-
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,66 +6,13 @@ if(isset($_GET["compra"])){
     <meta name="description" content="">
     <title>Contato</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-
-  <style>
-        
-    .prod-container {
-
-      display: flex;
-    }
-
-    .produto {
-
-      width: 350px;
-      background-color: beige;
-      padding: 20px;
-      margin: 20px;
-    }
-
-    .produto > img {
-
-      width: 300px;
-      height: 300px;
-
-      border-radius: 20px;
-    }
-
-    .produto > img.unactive {
-
-      display: none
-    }
-
-    .produto > button {
-
-      width: 100%;
-    }
-
-  </style>
-
-  <script>
-
-    function next(img1, img2, img3, id) {
-
-      let images = [img1, img2, img3];
-      
-      let myImg = document.getElementById(id).src.substring(document.getElementById(id).src.lastIndexOf("/") + 1);
-      let currentindex = images.indexOf(myImg) + 1;
-
-      if(currentindex == -1 || images[currentindex] == "NULL") return;
-
-      if(currentindex >= 3) currentindex = 0;
-      document.getElementById(id).src = "admin/uploads/" + images[currentindex];
-    }
-
-  </script>
-
 <link rel="stylesheet" href="Contato.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.6.2, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
+
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -113,42 +46,24 @@ if(isset($_GET["compra"])){
     <section class="u-clearfix u-section-1" id="sec-1bc3">
       <div class="u-clearfix u-sheet u-sheet-1"></div>
     </section>
-
-    <h1>Produtos</h1>
-    <?php
-
-        include_once("admin/includes/config.inc.php");
-
-        $res = my_query("SELECT * FROM produtos");
-        
-        echo "<div class=\"prod-container\">";
-        foreach($res as $prod){
-
-          ?>
-
-          <div class="produto">
-            <h2>Nome: <?php echo $prod["nome"] ?></h2>
-            <p class="desc">Descrição: <?php echo $prod["descricao"] ?></p>
-            <img src=<?php echo "admin/uploads/".$prod["img1"] ?> alt="" id=<?php echo $prod["nome"] ?>>
-
-            <button onclick=<?php 
-
-                $arr = array($prod["img1"], $prod["img2"], $prod["img3"], $prod["nome"]);
-                $text = "'" . implode("','", $arr) . "'";
-
-                echo "next($text)"; 
-              ?> 
-              type="">Next</button>
-            <p class="preco"><strong><?php echo $prod["preco"] ?> €</strong></p>
-
-            <a href=<?php echo "?compra=".$prod["id"] ?>>Efeturar compra</a>
-          </div>
-
-          <?php
-        }
-        echo "</div>";
-        
-    ?>
-
   
+    <h2>GALERIA DE FUMOS OH MY GOD</h2>
+
+    <?php
+    
+        include_once "admin/includes/db.inc.php";
+
+        $sql = "SELECT * FROM galeria";
+        $res = my_query($sql);
+
+        foreach ($res as $value) {
+            
+            ?>
+
+                <img class="imagem" src=<?php echo "admin/uploads/" . $value["img"]; ?> />
+
+            <?php
+        }
+
+    ?>
 </body></html>
