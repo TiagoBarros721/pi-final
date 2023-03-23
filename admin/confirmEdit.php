@@ -64,6 +64,6 @@ echo $sql;
 my_query($sql);
 
 
-header("location: crud.php");
+header("location: index.php?table=$table");
 
 ?>
