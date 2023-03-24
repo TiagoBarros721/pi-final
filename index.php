@@ -116,16 +116,6 @@
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-custom-color-2 u-section-8" id="carousel_cf37">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-center-sm u-align-center-xl u-container-style u-group u-group-1">
-          <div class="u-container-layout u-valign-middle u-container-layout-1">
-            <h2 class="u-align-center-lg u-align-center-md u-align-center-xs u-text u-text-black u-text-1">Contact Us Now To Get Quote For All Your Global Shipping Needs</h2>
-            <a href="https://nicepage.com/c/slider-website-templates" class="u-btn u-button-style u-custom-font u-font-courier-new u-palette-1-base u-btn-1">Read More</a>
-          </div>
-        </div>
-      </div>
-    </section>
     
     <section class="u-clearfix u-section-10" id="carousel_eb1d">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -137,7 +127,7 @@
               </div>
               <div class="u-container-style u-layout-cell u-right-cell u-size-22 u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <h2 class="u-custom-font u-font-oswald u-text u-text-1">We Are Hermes</h2>
+                  <h2 class="u-custom-font u-font-oswald u-text u-text-1">Quem somos</h2>
                   <h4 class="u-custom-font u-font-courier-new u-text u-text-2">A FORWARD-LOOKING APPROACH TO BUSINESS</h4>
                   <p class="u-text u-text-3">Corporate social responsibility is important to us. We believe that taking economic, environmental and social factors into consideration leads to long-term business success. This approach has a long history at Schneider,
                                     as we have more than 150 years of experience.</p>

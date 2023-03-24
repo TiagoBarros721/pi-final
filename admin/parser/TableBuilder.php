@@ -81,7 +81,9 @@ class TableBuilder{
             $query = "SELECT * FROM " . $this->tableMetaData->name . " WHERE " . $this->tableMetaData->identifier . " = " . $value[$this->tableMetaData->identifier] . "";
 
             if(!isset($this->tableMetaData->editable) || $this->tableMetaData->editable)
-            echo "<td><a href='edit.php?table=$table&nome=$nome&header=$head&query=$query'>X</a></td><td><a href='delete.php?table=$table&nome=$nome&ident=".$this->tableMetaData->identifier."'>X</td>";
+
+            $comment = isset($this->tableMetaData->comment) ? "comment=".$this->tableMetaData->comment."&" : "";
+            echo "<td><a href='edit.php?".$comment."table=$table&nome=$nome&header=$head&query=$query'>X</a></td><td><a href='delete.php?table=$table&nome=$nome&ident=".$this->tableMetaData->identifier."'>X</td>";
         }
         echo "</tbody></table></div>";
     }

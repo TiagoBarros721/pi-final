@@ -53,6 +53,9 @@ if(isset($_GET["create"])){
     }
     
     echo "<input type='submit'>";
+    if(isset($_GET["comment"])){
+        echo "<br>Comentário: " . $_GET["comment"];
+    }
 
     die;
 }
@@ -107,8 +110,11 @@ foreach($res[0] as $key => $value){
     $i++;
 }
 
-echo "<input type='submit'>";
 
+echo "<input type='submit'>";
+if(isset($_GET["comment"])){
+    echo "<br>Comentário: " . $_GET["comment"];
+}
 ?>
 
 

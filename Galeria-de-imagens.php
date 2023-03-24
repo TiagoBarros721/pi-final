@@ -49,6 +49,8 @@
   
     <h2>GALERIA DE FUMOS OH MY GOD</h2>
 
+    <div class="cards">
+
     <?php
     
         include_once "admin/includes/db.inc.php";
@@ -60,10 +62,17 @@
             
             ?>
 
+              <div class="card">
                 <img class="imagem" src=<?php echo "admin/uploads/" . $value["img"]; ?> />
+                <p><?php echo $value["img"]; ?></p>
+              </div>
 
             <?php
         }
 
     ?>
+
+    </div>
+
+    <br />
 </body></html>
