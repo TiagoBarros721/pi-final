@@ -1,0 +1,5 @@
+{
+	"name": "parceria",
+	"headers": ["*ID", "str:Nome", "img:Imagem"],
+	"identifier": "id"
+}

@@ -11,7 +11,11 @@ if(isset($_GET["create"])){
     $values = array();
 
     foreach ($_POST as $key => $value) {
-        
+
+        if($key[0] == "_"){
+            $key = substr($key, 1);
+            $value = encrypt($value);
+        }
         array_push($keys, $key);
 
         if($value == "on") $value = 1;
@@ -36,8 +40,9 @@ if(isset($_GET["create"])){
     $sql = "INSERT INTO $table (" . implode(",", $keys) . ") VALUES ('" . implode("','", $values) . "');";
     
     echo $sql;
+    pr($_POST);
     my_query($sql);
-    header("location: crud.php");
+    header("location: index.php?table=$table");
 }
 
 $conditions = array();

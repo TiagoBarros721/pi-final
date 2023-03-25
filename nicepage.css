@@ -13,19 +13,12 @@
   margin: 20px;
   float:left;
   transition-duration: 800ms;
-  transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
   border-radius: 10px;
 }
 
 .cards {
 
   float:left;
-}
-
-.card:hover {
-  
-  box-shadow: 5px 5px 0px rgb(99, 99, 99), 10px 10px 0px rgb(56, 56, 56), 15px 15px 0px black;
-  transform: rotate(1deg);
 }
 
 .card img {
@@ -17909,6 +17902,7 @@ img.u-opacity-0,
   pointer-events: auto;
   opacity: 1;
 }
+
 blockquote {
   padding: 10px 20px;
   padding-left: 0;

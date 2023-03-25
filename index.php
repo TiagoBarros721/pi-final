@@ -12,21 +12,7 @@
     <meta name="generator" content="Nicepage 5.6.2, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <link rel="stylesheet" href="./prefabCss.css">
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -39,7 +25,7 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body class="u-body u-xl-mode" data-lang="pt"><header class="u-clearfix u-header u-header" id="sec-7bf8"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+          <img src="./images/default-logo.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -85,32 +71,36 @@
     <section class="u-clearfix u-grey-5 u-section-7" id="carousel_a4b5">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+          <h4>Parcerias 😎🤝😎</h4>
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
+
+              <?php
+              
+              include_once "admin/includes/config.inc.php";
+
+              $res = my_query("SELECT * FROM parceria");
+              foreach($res as $p){
+
+                ?>
+
               <div class="u-align-center u-container-style u-expand-resize u-layout-cell u-left-cell u-size-10 u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle u-container-layout-1" src="">
-                  <img class="u-expanded-width u-image u-image-contain u-image-1" src="images/882603788c2762c154bdd314c2f03288.png">
+
+                <?php
+                
+                echo "<img class=\"u-expanded-width u-image u-image-contain u-image-1\" src=".("admin/uploads/".$p["img"]).">";
+                echo $p["nome"];
+                
+                ?>
+
                 </div>
               </div>
-              <div class="u-align-center u-container-style u-image u-image-contain u-layout-cell u-size-10 u-size-30-md u-image-2">
-                <div class="u-container-layout u-container-layout-2" src=""></div>
-              </div>
-              <div class="u-align-center u-container-style u-layout-cell u-size-10 u-size-30-md u-layout-cell-3">
-                <div class="u-container-layout u-valign-middle u-container-layout-3" src="">
-                  <img class="u-expanded-width u-image u-image-contain u-image-3" src="images/310713b9e02d2e900505ef624d7e29ed.png">
-                </div>
-              </div>
-              <div class="u-align-center u-container-style u-image u-image-contain u-layout-cell u-size-10 u-size-30-md u-image-4">
-                <div class="u-container-layout u-container-layout-4" src=""></div>
-              </div>
-              <div class="u-align-center u-container-style u-layout-cell u-size-10 u-size-30-md u-layout-cell-5">
-                <div class="u-container-layout u-valign-middle u-container-layout-5" src="">
-                  <img class="u-expanded-width u-image u-image-contain u-image-5" src="images/e38ce17501beb387e92c2414651650ce.png">
-                </div>
-              </div>
-              <div class="u-align-center u-container-style u-expand-resize u-image u-image-contain u-layout-cell u-size-10 u-size-30-md u-image-6">
-                <div class="u-container-layout u-container-layout-6" src=""></div>
-              </div>
+
+              <?php
+              }
+
+              ?>
             </div>
           </div>
         </div>
@@ -119,24 +109,16 @@
     
     <section class="u-clearfix u-section-10" id="carousel_eb1d">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-image u-layout-cell u-left-cell u-size-38 u-image-1">
-                <div class="u-container-layout"></div>
-              </div>
-              <div class="u-container-style u-layout-cell u-right-cell u-size-22 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <h2 class="u-custom-font u-font-oswald u-text u-text-1">Quem somos</h2>
-                  <h4 class="u-custom-font u-font-courier-new u-text u-text-2">A FORWARD-LOOKING APPROACH TO BUSINESS</h4>
-                  <p class="u-text u-text-3">Corporate social responsibility is important to us. We believe that taking economic, environmental and social factors into consideration leads to long-term business success. This approach has a long history at Schneider,
-                                    as we have more than 150 years of experience.</p>
-                  <a href="https://nicepage.com/wordpress-themes" class="u-btn u-button-style u-custom-font u-font-courier-new u-palette-1-base u-btn-1">read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php
+        
+        echo "<h2 class=\"u-custom-font u-font-oswald u-text u-text-1\">Quem somos</h2>";
+        include_once "admin/includes/config.inc.php";
+        $res = my_query("SELECT * FROM conteudo WHERE pagina = 'index'");
+        
+        $style = array("header" => "u-custom-font u-font-courier-new u-text u-text-2", "content" => "u-text u-text-3", "link" => "u-btn u-button-style u-custom-font u-font-courier-new u-palette-1-base u-btn-1");
+        parseContent($res[0], $style);
+
+        ?>
       </div>
     </section>
   

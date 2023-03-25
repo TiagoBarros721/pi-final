@@ -40,22 +40,18 @@ if(isset($_GET["create"])){
                 $type = "file";
                 break;
             case "dat":
-
                 $type = "date";
                 break;
         }
 
         echo $value["Field"] . ": ";
-        echo "<input type='$type' name='".$value["Field"]."' id='".$value["Field"]."' />";
+        echo "<input type='$type' name='". ($type[0] == "_" ? "_" : "") .$value["Field"]."' id='".$value["Field"]."' />";
         echo "<br/>";
 
         $i++;
     }
     
     echo "<input type='submit'>";
-    if(isset($_GET["comment"])){
-        echo "<br>Comentário: " . $_GET["comment"];
-    }
 
     die;
 }
@@ -75,7 +71,7 @@ foreach($res[0] as $key => $value){
     if($headers[$i][0] == "*" || $headers[$i][0] == "_") {$i++;continue;};
     
     $type = substr($headers[$i], 0, 3);
-    $head = substr($headers[$i], 3);
+    $head = substr($headers[$i], 4);
     
     switch ($type){
 
@@ -98,7 +94,6 @@ foreach($res[0] as $key => $value){
             $type = "file";
             break;
             case "dat":
-
                 $type = "date";
                 break;
     }
@@ -110,11 +105,8 @@ foreach($res[0] as $key => $value){
     $i++;
 }
 
-
 echo "<input type='submit'>";
-if(isset($_GET["comment"])){
-    echo "<br>Comentário: " . $_GET["comment"];
-}
+
 ?>
 
 
