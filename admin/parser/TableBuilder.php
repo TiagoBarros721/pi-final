@@ -73,7 +73,7 @@ class TableBuilder{
             $index = 0;
             foreach ($value as $key => $v) {
 
-                echo (substr($this->tableHeaders[$index], 0, 1) == "_") ? "<td>###</td>" : "<td>".$v."</td>";
+                echo (substr($this->tableHeaders[$index], 0, 1) == "_") ? "<td >###</td>" : "<td class='fixedsize'>".$v."</td>";
                 $index++;
             }
 

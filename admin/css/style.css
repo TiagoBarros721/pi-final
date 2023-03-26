@@ -10038,6 +10038,12 @@ input[type="checkbox"]:checked:after {
   ;
   top: 5px; }
 
+  .fixedsize h2, h1, h3, h4, h5, h6{
+
+    font-size: 12px !important;
+    font-weight: normal !important;
+    text-align: center !important;
+  }
 .daterangepicker td.active {
   background-color: #1976d2; }
   .daterangepicker td.active:hover {

@@ -57,7 +57,8 @@ if(count($_FILES) > 0){
     $names = array();
     foreach($_FILES as $key => $file){
         
-        if($file['name'] == "") array_push($conditions, $key . " = 'NULL'");
+        
+        if($file['name'] == "") continue;
         else array_push($conditions, $key . " = '". $file['name'] ."'");
         uploadPic($key);
     }

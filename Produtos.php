@@ -65,7 +65,7 @@ if(isset($_GET["compra"])){
       let myImg = document.getElementById(id).src.substring(document.getElementById(id).src.lastIndexOf("/") + 1);
       let currentindex = images.indexOf(myImg) + 1;
 
-      if(currentindex == -1 || images[currentindex] == "NULL") return;
+      if(currentindex == -1 || images[currentindex] == "NULL") images[currentIndex] = "default.png";
 
       if(currentindex >= 3) currentindex = 0;
       document.getElementById(id).src = "admin/uploads/" + images[currentindex];

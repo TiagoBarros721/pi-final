@@ -21,3 +21,18 @@
   max-width: 500px;
 }
 
+.style2 div:not(:first-child) {
+  padding-left: 20px !important;
+} 
+
+.style3 {
+
+  display: grid !important;
+  grid-template-columns: 50% 50% !important;
+  padding: 20px !important;
+}
+
+.style3 div {
+
+  margin: 10px !important;
+}
