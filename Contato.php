@@ -114,5 +114,14 @@
         <span>Website Builder Software</span>
       </a>. 
     </section>
+
+    <?php
+    
+      $res = my_query("SELECT * FROM conteudo WHERE pagina='Contato'");                
+      parseContent($res[0]);
+
+    ?>
+
+    <br>
   
 </body></html>

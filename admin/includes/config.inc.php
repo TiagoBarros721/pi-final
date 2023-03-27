@@ -9,8 +9,8 @@ if($_SERVER['HTTP_HOST'] == 'web.colgaia.local' || $_SERVER['HTTP_HOST'] == 'loc
 }
 
 $arrConfig['servername'] = 'localhost';
-$arrConfig['username'] = '12itm25';
-$arrConfig['password'] = '12itm25633173bf6d31e';
+$arrConfig['username'] = 'root';
+$arrConfig['password'] = '';
 $arrConfig['dbname'] = '12itm25_login';
 
 // isLoginKey - alterar a chave de codificação para o Backoffice

@@ -95,8 +95,14 @@
               include_once "admin/includes/config.inc.php";
 
               $res = my_query("SELECT * FROM conteudo WHERE pagina='Sobre'");
-              $style = array("header" => "u-text u-text-body-alt-color ", "contents" => "u-text u-text-body-alt-color u-text-2",
-                "sections" => array("u-image-3","u-image-2","u-image-3")
+              $style = array(
+                "header" => "u-text u-text-body-alt-color ", 
+                "contents" => "u-text u-text-body-alt-color u-text-2",
+                "sections" => array(
+                  "u-image-3",
+                  "u-image-2",
+                  "u-image-3"
+                  )
               );
               parseContent($res[1], $style);
 

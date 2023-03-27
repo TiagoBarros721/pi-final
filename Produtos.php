@@ -25,7 +25,8 @@ if(isset($_GET["compra"])){
         
     .prod-container {
 
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(350px, 1fr));
     }
 
     .produto {
@@ -65,7 +66,7 @@ if(isset($_GET["compra"])){
       let myImg = document.getElementById(id).src.substring(document.getElementById(id).src.lastIndexOf("/") + 1);
       let currentindex = images.indexOf(myImg) + 1;
 
-      if(currentindex == -1 || images[currentindex] == "NULL") images[currentIndex] = "default.png";
+      if(currentindex == -1 || images[currentindex] == "NULL") currentindex++;
 
       if(currentindex >= 3) currentindex = 0;
       document.getElementById(id).src = "admin/uploads/" + images[currentindex];
@@ -127,17 +128,17 @@ if(isset($_GET["compra"])){
           ?>
 
           <div class="produto">
-            <h2>Nome: <?php echo $prod["nome"] ?></h2>
+            <h2><?php echo $prod["nome"] ?></h2>
             <p class="desc">Descrição: <?php echo $prod["descricao"] ?></p>
             <p class="desc">Caracteristicas: <?php echo $prod["caracteristicas"] ?></p>
             <img src=<?php echo "admin/uploads/".$prod["img1"] ?> alt="" id=<?php echo $prod["nome"] ?>>
 
             <button onclick=<?php 
 
-                $arr = array($prod["img1"], $prod["img2"], $prod["img3"], $prod["nome"]);
+                $arr = array($prod["img1"], $prod["img2"], $prod["img3"], explode(" ", $prod["nome"])[0]);
                 $text = "'" . implode("','", $arr) . "'";
 
-                echo "next($text)"; 
+                echo '"next('.$text.')"'; 
               ?> 
               type="">Next</button>
             <p class="preco"><strong><?php echo $prod["preco"] ?> €</strong></p>

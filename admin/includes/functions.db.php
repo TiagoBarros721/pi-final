@@ -14,7 +14,7 @@ function addLog(){
 
 function drawMenu(){
 
-    $res = my_query("SELECT * FROM menu");
+    $res = my_query("SELECT * FROM menu WHERE ativo = '1'");
 
     foreach ($res as $key => $value) {
   

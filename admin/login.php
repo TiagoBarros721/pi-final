@@ -6,7 +6,7 @@ include_once("includes/config.inc.php");
 $email = $_POST["email"];
 $pass = $_POST["pass"];
 
-$login = my_query("SELECT * FROM login WHERE username = '$email'");
+$login = my_query("SELECT * FROM login WHERE username = '$email' AND ativo = '1'");
 if(count($login) > 0){
 
 	//pr($login[0]);

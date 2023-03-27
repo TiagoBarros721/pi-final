@@ -39,7 +39,7 @@ if(isset($_GET["create"])){
                 $type = "checkbox";
                 break;
             case "flt":
-                $type = "number' step='0.1";
+                $type = "number' step='0.01";
                 break;
             case "num":
                 $type = "number";
@@ -84,8 +84,19 @@ if(isset($_GET["create"])){
                 }
         }
 
+        $lastID = "";
+        if($value["Extra"] == "auto_increment") {
+
+            $lastID = my_query("SELECT MAX(".$value["Field"].") FROM $table")[0]["MAX(".$value["Field"].")"];
+
+            if(count(my_query("SELECT MAX(".$value["Field"].") FROM $table")) == 0){
+
+                $lastID = 1;                
+            }else{ $lastID = "value='".($lastID+1)."'"; }
+        }
+
         echo $value["Field"] . ": ";
-        echo "<input $required type='$type' name='". ($type[0] == "_" ? "_" : "") .$value["Field"]."' id='".$value["Field"]."' />";
+        echo "<input $required type='$type' name='". ($type[0] == "_" ? "_" : "") .$value["Field"]."' id='".$value["Field"]."' $lastID />";
         echo "<br/>";
 
         $i++;
@@ -132,7 +143,7 @@ foreach($res[0] as $key => $value){
             $type = "checkbox";
             break;
         case "flt":
-            $type = "number' step='0.1";
+            $type = "number' step='0.01";
             break;
         case "num":
             $type = "number";
