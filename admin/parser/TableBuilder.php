@@ -52,6 +52,8 @@ class TableBuilder{
                 $name = explode(":", $key)[1];
                 $extension = explode(":", $key)[0];
                 
+                $name = str_replace("!", "", $name);
+                
                 array_push($types, $extension);
                 echo "<th>$name</th>";
 
@@ -59,6 +61,7 @@ class TableBuilder{
                 
                 $key = str_replace("_", "", $key);
                 $key = str_replace("*", "", $key);
+                $key = str_replace("!", "", $key);
                 echo "<th>".$key."</th>";
             } 
         }
@@ -80,9 +83,9 @@ class TableBuilder{
             $nome = $value[$this->tableMetaData->identifier];
             $query = "SELECT * FROM " . $this->tableMetaData->name . " WHERE " . $this->tableMetaData->identifier . " = " . $value[$this->tableMetaData->identifier] . "";
 
-            if(!isset($this->tableMetaData->editable) || $this->tableMetaData->editable)
-
+            
             $comment = isset($this->tableMetaData->comment) ? "comment=".$this->tableMetaData->comment."&" : "";
+            if(!isset($this->tableMetaData->editable) || $this->tableMetaData->editable)    
             echo "<td><a href='edit.php?".$comment."table=$table&nome=$nome&header=$head&query=$query'>X</a></td><td><a href='delete.php?table=$table&nome=$nome&ident=".$this->tableMetaData->identifier."'>X</td>";
         }
         echo "</tbody></table></div>";

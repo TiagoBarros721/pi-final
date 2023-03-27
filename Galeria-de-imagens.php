@@ -56,14 +56,15 @@
         include_once "admin/includes/db.inc.php";
 
         $sql = "SELECT * FROM galeria";
-        $res = my_query($sql);
+        $res = my_query_pages($sql, isset($_GET["page"]) ? $_GET["page"] : 0);
+        echo "<br/>";
 
         foreach ($res as $value) {
             
             ?>
 
               <div class="card">
-                <img class="imagem" src=<?php echo "admin/uploads/" . $value["img"]; ?> />
+                <img class="" src=<?php echo "admin/uploads/" . $value["img"]; ?> />
                 <p><?php echo $value["img"]; ?></p>
               </div>
 

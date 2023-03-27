@@ -1,7 +1,7 @@
 
 {
 	"name": "galeria",
-	"headers": ["*ID", "img:Imagem"],
+	"headers": ["*ID", "img:Imagem!"],
 	"identifier": "id"
 }
     

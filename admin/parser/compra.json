@@ -1,6 +1,6 @@
 
 {
 	"name": "compra",
-	"headers": ["*ID", "str:Id do produto", "dat:Data"],
+	"headers": ["*ID", "{produtos-id}:Id do produto", "dat:Data"],
 	"identifier": "id"
 }

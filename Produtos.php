@@ -119,7 +119,7 @@ if(isset($_GET["compra"])){
 
         include_once("admin/includes/config.inc.php");
 
-        $res = my_query("SELECT * FROM produtos");
+        $res = my_query_pages("SELECT * FROM produtos", isset($_GET["page"]) ? $_GET["page"] : 0);
         
         echo "<div class=\"prod-container\">";
         foreach($res as $prod){
@@ -129,6 +129,7 @@ if(isset($_GET["compra"])){
           <div class="produto">
             <h2>Nome: <?php echo $prod["nome"] ?></h2>
             <p class="desc">Descrição: <?php echo $prod["descricao"] ?></p>
+            <p class="desc">Caracteristicas: <?php echo $prod["caracteristicas"] ?></p>
             <img src=<?php echo "admin/uploads/".$prod["img1"] ?> alt="" id=<?php echo $prod["nome"] ?>>
 
             <button onclick=<?php 

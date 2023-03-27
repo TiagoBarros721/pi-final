@@ -1,5 +1,5 @@
 {
 	"name": "locals",
-	"headers": ["*ID", "str:Morada", "num:Telefone", "num:Fax"],
+	"headers": ["*ID", "str:Morada!", "num:Telefone", "num:Fax"],
 	"identifier": "id"
 }

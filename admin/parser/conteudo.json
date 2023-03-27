@@ -1,7 +1,7 @@
 
 {
 	"name": "conteudo",
-	"headers": ["*ID", "str:Cabeçalho", "txt:Conteúdos", "str:Página", "num:Tipo", "str:Link", "img:Imagem"],
+	"headers": ["*ID", "str:Cabeçalho", "txt:Conteúdos", "{menu-nome}:Página", "{0,1,2,3}:Tipo", "str:Link", "img:Imagem"],
 	"identifier": "id",
     "comment": "Os tipos de conteudo definem o layout em que este será mostrado"
 }

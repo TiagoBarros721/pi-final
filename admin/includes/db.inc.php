@@ -58,4 +58,52 @@ function my_query($sql, $debug=0) {
 	} 
 	return 0;
 }
+
+function my_query_pages($sql, $page=0) {
+	global $arrConfig;
+
+	$result = $arrConfig['conn']->query($sql . " LIMIT 20 OFFSET " . $page * 20);
+	
+	if($page != 0) echo "<a href='".$_SERVER["SCRIPT_NAME"]."?page=".($page-1)."'><- Anterior</a> ";
+	echo "<a href='".$_SERVER["SCRIPT_NAME"]."?page=".($page+1)."'>Seguinte -></a>";
+
+	/* SELECT
+	mysqli_result Object
+	(
+	    [current_field] => 0
+	    [field_count] => 5
+	    [lengths] => 
+	    [num_rows] => 3
+	    [type] => 0
+	)
+	*/
+
+	/* UPDATE
+	1: correu tudo bem
+	0: erro na QUERY
+	*/
+
+	/* DELETE
+	1: correu tudo bem
+	0: erro na QUERY
+	*/
+
+	/* INSERT
+	id: correu tudo bem
+	0: erro na QUERY
+	*/
+
+	if(isset($result->num_rows)) { // SELECT
+		$arrRes = array();
+		if ($result->num_rows > 0) {
+		    while($row = $result->fetch_assoc()) {
+		        $arrRes[] = $row;
+		    }
+		}
+
+		return $arrRes;
+	}
+	return 0;
+}
+
 ?>

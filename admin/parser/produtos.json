@@ -1,5 +1,5 @@
 {
 	"name": "produtos",
-	"headers": ["*ID", "str:Nome", "str:Descrição", "flt:Preço", "img:Imagem1","img:Imagem2","img:Imagem3"],
+	"headers": ["*ID", "str:Nome", "str:Descrição", "flt:Preço", "img:Imagem1","img:Imagem2","img:Imagem3", "str:Caracteristicas"],
 	"identifier": "id"
 }
